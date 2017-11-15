@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="./jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+        }</style>
+
+</head>
+
+
+<body>
+
+<!-- Start of first page: #one -->
+<div data-role="page" id="one">
+
+    <div data-role="header">
+        <h1>BMI Intro</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Introduction</h2>
+
+        <p>The BMI Formula to calculate Body Mass Index:
+            BMI= kilograms per meter squared </p>
+
+
+        <p><img src="./images/BMIFor.jpg" alt="Food Pyramid"></p>
+
+        <br/>
+        <p>To calculate your BMI (Body Mass Index), take your weight (in kilograms),
+            and divide by your height (in meters) squared.</p>
+        <br/>
+        <p>Who decided the Body Descriptions? What is overweight?</p>
+        <br/>
+        <p>A Body Mass Index or bmi score between 25 and 29.9 is “overweight“, and greater than or equal to 30 is
+            “obese“, according to an old BMI definition1. Furthermore a normal bmi was said to be between 18.5 to 24.9.
+            This definition is used by the World Health Organization (WHO) as its international standard3. You can read
+            more about it, (including its problems). </p>
+        <br/>
+        <p>For children, there was no suitable Body Mass Index (BMI) criteria (until around year 2000), which was a
+            weakness of previous versions of the bmi calculator. (Actually, nearly all other BMI calculators on the
+            internet are still not suitable for use for children.) See below for recent changes!</p>
+        <br/>
+        <!--
+                <p><a href="#two" >Click to go back</a>
+                </p>
+        -->
+
+
+        <h3>Go to :</h3>
+
+        <p><a href="#BMI" class="ui-btn ui-shadow ui-corner-all">BMI Calculator</a>
+        <p><a href="#two" class="ui-btn ui-shadow ui-corner-all">More about BMI</a>
+
+        <p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Show Developers
+            </a></p>
+
+
+
+
+
+    </div><!-- /content -->
+
+
+
+    <div data-role="footer" data-theme="a">
+
+        <h4>Copyright &copy; 2017. CS643 Team6 </h4>
+    </div><!-- /footer -->
+</div><!-- /page one -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="BMI" data-theme="a">
+
+    <div data-role="header">
+        <h1>BMI Cal</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>BMI Calculator</h2>
+
+
+        <script src="./bmi_files/jquery.js"></script>
+        <script src="./bmi_files/DialogBySHF.js"></script>
+        <script src="./bmi_files/in01.js"></script>
+        <link rel="Stylesheet" type="text/css" href="./bmi_files/DialogBySHF.css"/>
+        <link rel="stylesheet" href="./bmi_files/style.css"/>
+
+
+        <body>
+        <div class="page" data-page='profile1'>
+            <div class="page-main">
+                <input type="hidden" name="first_screen" value="30##150##50">
+                <div class="row">
+                    <label for="" class="label">Your Age <span class="number age-num" initial-value="12"
+                                                               value="30">30</span><span
+                            class="letter">year</span></label>
+                    <div class="ruler ruler-age">
+                        <div class="main" value="-1">
+                            <ul data-initial='true'>
+                                <li><span class="num">18</span></li>
+                                <li><span class="num">19</span></li>
+                                <li><span class="num">20</span></li>
+                                <li><span class="num">21</span></li>
+                                <li><span class="num">22</span></li>
+                                <li><span class="num">23</span></li>
+                                <li><span class="num">24</span></li>
+                                <li><span class="num">25</span></li>
+                                <li><span class="num">26</span></li>
+                                <li><span class="num">27</span></li>
+                                <li><span class="num">28</span></li>
+                                <li><span class="num">29</span></li>
+                                <li><span class="num">30</span></li>
+                                <li><span class="num">31</span></li>
+                                <li><span class="num">32</span></li>
+                                <li><span class="num">33</span></li>
+                                <li><span class="num">34</span></li>
+                                <li><span class="num">35</span></li>
+                                <li><span class="num">36</span></li>
+                                <li><span class="num">37</span></li>
+                                <li><span class="num">38</span></li>
+                                <li><span class="num">39</span></li>
+                                <li><span class="num">40</span></li>
+                                <li><span class="num">41</span></li>
+                                <li><span class="num">42</span></li>
+                                <li><span class="num">43</span></li>
+                                <li><span class="num">44</span></li>
+                                <li><span class="num">45</span></li>
+                                <li><span class="num">46</span></li>
+                                <li><span class="num">47</span></li>
+                                <li><span class="num">48</span></li>
+                                <li><span class="num">49</span></li>
+                                <li><span class="num">50</span></li>
+                            </ul>
+
+                        </div>
+
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="" class="label">Your Height <span class="number height-num" initial-value="10"
+                                                                  value="150">150</span><span
+                            class="letter">cm</span></label>
+                    <div class="ruler ruler-height">
+                        <div class="main" value="-1">
+                            <ul data-initial='true'>
+                                <li><span class="num">140</span></li>
+                                <li><span class="num">150</span></li>
+                                <li><span class="num">160</span></li>
+                                <li><span class="num">170</span></li>
+                                <li><span class="num">180</span></li>
+                                <li><span class="num">190</span></li>
+                                <li><span class="num">200</span></li>
+                            </ul>
+                        </div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="" class="label">Your Weight <span class="number width-num" initial-value="8" value="50">50</span><span
+                            class="letter">kg</span></label>
+                    <div class="ruler ruler-weight">
+                        <div class="main" value="0">
+                            <ul data-initial='true'>
+                                <li><span class="num">30</span></li>
+                                <li><span class="num">35</span></li>
+                                <li><span class="num">40</span></li>
+                                <li><span class="num">45</span></li>
+                                <li><span class="num">50</span></li>
+                                <li><span class="num">55</span></li>
+                                <li><span class="num">60</span></li>
+                                <li><span class="num">65</span></li>
+                                <li><span class="num">70</span></li>
+                                <li><span class="num">75</span></li>
+                                <li><span class="num">80</span></li>
+                                <li><span class="num">85</span></li>
+                                <li><span class="num">90</span></li>
+                                <li><span class="num">95</span></li>
+                                <li><span class="num">100</span></li>
+                            </ul>
+                        </div>
+                        <div class="arrow"></div>
+                    </div>
+                </div>
+
+
+                <!--
+                        <select  id="slt">
+                                    <option value="0">Select Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                -->
+
+
+                <form>
+                    <fieldset data-role="controlgroup" data-type="horizontal">
+                        <legend>Select Gender:</legend>
+                        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="1" class="cc_radio"
+                               checked="checked">
+                        <label for="radio-choice-h-2a">Male</label>
+                        <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" class="cc_radio" value="2">
+                        <label for="radio-choice-h-2b">Female</label>
+                    </fieldset>
+                </form>
+
+                <br/><br/>
+
+                <button id="btn">Calculate</button>
+            </div>
+        </div>
+
+
+        </body>
+
+
+        <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to Homepage</a>
+        </p>
+
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Copyright &copy; 2017. CS643 Team6 </h4>
+    </div><!-- /footer -->
+</div><!-- /page two -->
+
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="two" data-theme="a">
+
+    <div data-role="header">
+        <h1>Guide</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Guide page</h2>
+
+        <p><img src="./images/BMIRo.jpg" alt="Food Pyramid"></p>
+        <p>If your BMI is below 18.5: Your BMI is considered underweight. Keep in mind that an underweight BMI
+            calculation may pose certain health risks. Please consult your healthcare provider for more information
+            about BMI calculations.</p>
+        <br/>
+        <p>If your BMI is between 18.5-24.9: Your BMI is considered normal. This healthy weight helps reduce your risk
+            of serious health conditions and means you’re close to your fitness goals.</p>
+        <br/>
+        <p>If your BMI is above 30: Your BMI is considered overweight. Being overweight may increase your risk of
+            cardiovascular disease. Consider making lifestyle changes through healthy eating and fitness to improve your
+            health. Our Couch to 5K training plan is a great place to start.</p>
+        <br/>
+        <p>The fitness tutorial video: </p>
+
+        <div id="BMILess">
+
+            <a href="#popupVideo" data-rel="popup" data-position-to="window"
+               class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Video for BMI less than 19 &nbsp&nbsp&nbsp&nbsp&nbsp </a>
+            <div data-role="popup" id="popupVideo" data-overlay-theme="b" data-theme="a" data-tolerance="15,15"
+                 class="ui-content"> 
+                <iframe width="350" height="280" src="https://www.youtube.com/embed/SE5xx9i-KpI" frameborder="0"
+                        gesture="media" allowfullscreen></iframe>
+            </div>
+            <br/>
+        </div>
+
+
+        <div id="BMIMaintain">
+
+            <a href="#popupVideo2" data-rel="popup" data-position-to="window"
+               class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Maintain current BMI
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </a>
+            <div data-role="popup" id="popupVideo2" data-overlay-theme="b" data-theme="a" data-tolerance="15,15"
+                 class="ui-content"> 
+                <iframe width="350" height="280" src="https://www.youtube.com/embed/w8HBfS9AOAc" frameborder="0"
+                        gesture="media" allowfullscreen></iframe>
+            </div>
+            <br/>
+        </div>
+
+
+        <div id="BMIGreater">
+            <a href="#popupVideo3" data-rel="popup" data-position-to="window"
+               class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Video for BMI greater than 25</a>
+            <div data-role="popup" id="popupVideo3" data-overlay-theme="b" data-theme="a" data-tolerance="15,15"
+                 class="ui-content">
+                <iframe width="350" height="280" src="https://www.youtube.com/embed/pM4yrrR8ZUE" frameborder="0"
+                        gesture="media" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <br/>
+
+
+        <h4>Calorie Control</h4>
+        <br/>
+        <p>Food Pyramid, the plate contains six major food groups: fruits, vegetables, protein, dairy, grains
+            and oils</p>
+
+        <ul data-role="listview" data-inset="true">
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/Grain.jpg">
+                <h2>grains</h2>
+                <p>Bread, Cereal, Rice, and Pasta</p></a>
+            </li>
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/vege.jpg">
+                <h2>Vegetables</h2>
+                <p>Broccoli, brussels sprouts, bok choy, cabbages, cauliflower, kale</p></a>
+            </li>
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/fruit.jpg">
+                <h2>Fruits</h2>
+                <p>Apple, Banana, Orange, Pear</p></a>
+            </li>
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/prot.jpg">
+                <h2>Protein</h2>
+                <p>Meat, Poultry, Fish</p></a>
+            </li>
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/dai.jpg">
+                <h2>Dairy</h2>
+                <p>Milk, Yogurt, and Cheese</p></a>
+            </li>
+
+
+            <li><a href="./yaoImg.html">
+                <img src="./images/oils.jpg">
+                <h2>Oils</h2>
+                <p>Fats, oils & Sweets</p></a>
+            </li>
+
+
+        </ul>
+
+
+        <div data-role="collapsible" data-theme="w" data-content-theme="b">
+                <h4>Everything else/More info</h4>
+                <p>Please see doctor if your BMI is too low or too high</p>
+        </div>
+
+
+        <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to Homepage</a>
+        </p>
+
+    </div><!-- /content -->
+
+    <!--
+    <p><a href="http://www.xzk.co/456/wss">About us</a></p>
+    -->
+    <div data-role="footer">
+
+        <h4>Copyright &copy; 2017. CS643 Team6 </h4>
+    </div><!-- /footer -->
+</div><!-- /page two -->
+
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+    <div data-role="header" data-theme="b">
+        <h1>Show Developers</h1>
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+        <h2>Developers</h2>
+        <p>This website/app was developed by Yaobin Liang & Manlu Chen</p>
+        <p>Here's the contact info: ynex5x@gmail.com </p>
+
+        <a href="http://www.xzk.co/456/wss/index.html">
+        <p><img src="./images/team66.jpg" alt="team6"></p>
+        </a>
+
+        <p><a href="#one" data-rel="back"
+              class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to
+            homepage</a>
+        </p>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Nice to see you again!</h4>
+    </div><!-- /footer -->
+</div><!-- /page popup -->
+
+
+</body>
+
+
+</html>
